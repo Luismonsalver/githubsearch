@@ -1,0 +1,115 @@
+* {
+    margin: 0;
+    padding: 0;
+}
+
+header {
+    display: flex;
+    justify-content: space-between;
+    padding: 20px 40px;
+}
+
+header h1 {
+    font-family: Arial;
+    font-size: 2.5rem;
+}
+
+#darkModeButton {
+    border: none;
+    border-radius: 20px;
+    cursor: pointer;
+    padding: 0 15px;
+}
+
+.principal {
+    padding: 20px 40px;
+}
+
+#search {
+    border: none;
+    padding: 15px;
+    border-radius: 25px;
+    width: 575px;
+    box-sizing: border-box;
+}
+
+input[type="text"] {
+    color: #232323;
+    font: bold 1.3rem "Century Gothic";
+    text-indent: 20px;
+}
+
+input[type="text"]::placeholder {
+    color: rgba(97, 97, 97, 0.888);
+    font: bold 1.1rem "Century Gothic";
+    text-indent: 20px;
+}
+
+input[type="text"]:focus {
+    outline: none;
+    box-shadow: 0 0 5px 1px #e2e2e2ad;
+  }
+
+#users{
+    width: 575px;
+}
+
+.user {
+    display: flex;
+    flex-direction: column;
+    color: #ffffff;
+    width: 100%;
+    box-sizing: border-box;
+    margin: 20px 0;
+    padding: 20px 30px 30px;
+    border-radius: 30px;
+    background-color: #222239;
+}
+
+.user h2 {
+    font-family: Calibri;
+    font-size: 2.2rem;
+    margin-bottom: 10px;
+    margin-left: 10px;
+}
+
+.user .carta {
+    display: flex;
+    font-family: 'Trebuchet MS';
+    font-size: 1.3rem;
+    border-top: 3px solid #ffffff;
+    padding-top: 20px;
+}
+
+.user img {
+    width: 40%;
+    border-radius: 50%;
+    border: 7px solid #19192a;
+}
+
+.user .adicionales{
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+    padding-left: 30px;
+}
+
+.nonExist {
+    text-align: center;
+    color: #ffffff;
+    font: bold 1.5rem Calibri;
+    margin-top: 20px;
+}
+
+/* MODO OSCURO ACTIVADO */
+.darkMode header {
+    background-color: #040716;
+}
+
+body.darkMode {
+    background-color: #141424;
+}
+
+.darkMode h1 {
+    color: #ffffff;
+}

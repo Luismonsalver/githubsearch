@@ -2,8 +2,13 @@ const input = document.querySelector("#search");
 const userList = document.querySelector("#users");
 const url = "https://api.github.com/search/users?q=";
 const loginUrl = "https://api.github.com/users/"
+const darkModeButton = document.querySelector("#darkModeButton");
+const darkModeButtonLabel = document.querySelector("#darkModeButtonLabel");
 
 let userResults = []
+
+//BOTON PARA CAMBIAR DE MODO CLARO A OSCURO
+darkModeButton.addEventListener("click", toggleDarkMode);
 
 //FUNCION DEBOUNCE PARA RETRASAR LA PETICION
 function debounce(func, delay) {
@@ -62,11 +67,38 @@ function renderUsers() {
     userElement.classList.add("usuario");
     userElement.innerHTML = `
       <h2>${user.login}</h2>
-      <img src="${user.avatar_url}" alt="Avatar">
-      <p>${user.name ? user.name : "N/A"}</p>
-      <p>${user.company ? user.company : "No tiene una compañía"}</p>
-      <!-- Agrega otras propiedades del usuario que deseas mostrar -->
+      <div class="carta">
+        <img src="${user.avatar_url}" alt="Avatar">
+        <div class="adicionales">
+          <p><b>Nombre:</b> ${user.name ? user.name : "N/A"}</p>
+          <p><b>Compañía:</b> ${user.company ? user.company : "N/A"}</p>
+          <p><b>Seguidores:</b> ${user.followers}</p>
+          <p><b>Siguiendo:</b> ${user.following}</p>
+        </div>
+      </div>
     `;
     userList.appendChild(userElement);
   });
+}
+
+//
+if (window.matchMedia('(prefers-color-scheme)').media !== 'not all') {
+
+  const systemColorPreference = window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light';
+
+  if (systemColorPreference === 'dark') {
+    document.body.classList.add('darkMode');
+    darkModeButtonLabel.textContent = "Modo claro";
+  } else {
+    document.body.classList.remove('darkMode');
+  }
+}
+
+function toggleDarkMode() {
+  document.body.classList.toggle("darkMode");
+  if (document.body.classList.contains("darkMode")) {
+    darkModeButtonLabel.textContent = "Modo claro";
+  } else {
+    darkModeButtonLabel.textContent = "Modo oscuro";
+  }
 }

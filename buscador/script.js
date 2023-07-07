@@ -4,12 +4,23 @@ const url = "https://api.github.com/search/users?q=";
 const loginUrl = "https://api.github.com/users/"
 const darkModeButton = document.querySelector("#darkModeButton");
 const darkModeButtonLabel = document.querySelector("#darkModeButtonLabel");
+const placeholderText = input.placeholder;
 
 let userResults = []
 
 //BOTON PARA CAMBIAR DE MODO CLARO A OSCURO
 darkModeButton.addEventListener("click", toggleDarkMode);
 
+//REMOVER Y DEVOLVER EL PLACEHOLDER
+input.addEventListener("focus", function() {
+  this.placeholder = "";
+});
+
+input.addEventListener("blur", function() {
+  if (!this.value) {
+    this.placeholder = placeholderText;
+  }
+});
 //FUNCION DEBOUNCE PARA RETRASAR LA PETICION
 function debounce(func, delay) {
     let timer;

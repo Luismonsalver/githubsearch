@@ -1,24 +1,22 @@
 const input = document.querySelector("#search");
-const userList = document.querySelector("#users")
+const userList = document.querySelector("#users");
+const url = "https://api.github.com/search/users?q=";
+const loginUrl = "https://api.github.com/users/"
 
-window.addEventListener("DOMContentLoaded", async () => {
-    const data = await loadUsers()
-    renderUsers(data)
-    console.log(data)
-});
+let userResults = []
 
-async function loadUsers(){
-    const response = await fetch('https://api.github.com/users')
-        return await response.json()
-}
+function debounce(func, delay) {
+    let timer;
+    return function (...args) {
+      clearTimeout(timer);
+      timer = setTimeout(() => {
+        func.apply(this, args);
+      }, delay);
+    };
+  }
 
-input.addEventListener('keyup', e => {
-    console.log(input.value)
-})
+  function handleChange(e) {
+    console.log(e.target.value);
+  }
 
-const createUserItems = users => users.map(user => `<li>${user.login} ${user.id}</li>`).join(" ")
-
-function renderUsers(users) {
-    const itemString = createUserItems(users)
-    userList.innerHTML = itemString
-}
+input.addEventListener("input", debounce(handleChange, 2000));

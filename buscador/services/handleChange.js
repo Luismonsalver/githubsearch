@@ -7,5 +7,7 @@ function handleChange(e) {
     if (userInput) {
       searchApi(userInput);
       userList.innerHTML = "";
+    } else {
+      userList.innerHTML = "";
     }
   }

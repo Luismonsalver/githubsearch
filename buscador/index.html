@@ -23,13 +23,25 @@
         </header>
         <section class="principal">
 
-            <input type="text" placeholder="Ingrese el usuario a buscar" id="search">
+            <div class="centerItems">
+
+                <input type="text" placeholder="Ingrese el usuario a buscar" id="search">
+
+                <div id="loader">
+                    <div></div>
+                    <div></div>
+                    <div></div>
+                    <div></div>
+                </div>
+
+            </div>
 
             <div id="users"></div>
 
         </section>
     </main>
 
+    <!-- FUNCIONES A EJECUTAR -->
     <script src="services/debounce.js"></script>
     <script src="services/handleChange.js"></script>
     <script src="services/searchApi.js"></script>

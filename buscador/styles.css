@@ -86,7 +86,7 @@ input[type="text"]:focus {
 
 .user h2 {
     font-family: Calibri;
-    font-size: 2.2rem;
+    font-size: 1.8rem;
     margin-bottom: 10px;
     margin-left: 10px;
 }
@@ -124,10 +124,67 @@ input[type="text"]:focus {
 
 .nonExist {
     text-align: center;
-    color: #ffffff;
+    color: #2b2b2b;
     font: bold 1.5rem Calibri;
     margin-top: 20px;
 }
+
+/* LOADER */
+
+.centerItems {
+    display: flex;
+    flex-direction: column;
+    text-align: center;
+    width: fit-content;
+    align-items: center;
+}
+
+#loader {
+    display: none;
+  }
+
+  #loader.loading {
+    display: inline-block;
+    position: relative;
+    width: 80px;
+    height: 80px;
+    margin-top: 30px;
+  }
+
+  #loader.loading div {
+    box-sizing: border-box;
+    display: block;
+    position: absolute;
+    width: 64px;
+    height: 64px;
+    margin: 8px;
+    border: 8px solid #fff;
+    border-radius: 50%;
+    animation: loaderLoading 1.2s cubic-bezier(0.5, 0, 0.5, 1) infinite;
+    border-color: #2b2b2b transparent transparent transparent;
+  }
+
+  #loader.loading div:nth-child(1) {
+    animation-delay: -0.45s;
+  }
+
+  #loader.loading div:nth-child(2) {
+    animation-delay: -0.3s;
+  }
+
+  #loader.loading div:nth-child(3) {
+    animation-delay: -0.15s;
+  }
+
+  @keyframes loaderLoading {
+    0% {
+      transform: rotate(0deg);
+    }
+    100% {
+      transform: rotate(360deg);
+    }
+  }
+
 
 /* MODO OSCURO ACTIVADO */
 
@@ -170,6 +227,14 @@ body.darkMode {
     border: 7px solid #151524;
 }
 
+.darkMode .nonExist {
+    color: #ffffff;
+}
+
+.darkMode #loader.loading div {
+    border-color: #fff transparent transparent transparent;
+  }
+
 /* DISEÑO PARA RESOLUCIONES DE MENOS DE 1024PX */
 
 @media (max-width: 1024px) {
@@ -185,6 +250,10 @@ body.darkMode {
 
     #search {
         width: 80%;
+    }
+
+    .centerItems {
+        width: 100%
     }
 
     #users {

@@ -1,16 +1,16 @@
 //FUNCION DEBOUNCE PARA RETRASAR LA PETICION
+//LOADER AGREGADO MIENTRAS HAYA RETRASO
 function debounce(func, delay) {
   let timer;
-  const loader = document.querySelector('#loader');
 
   return function (...args) {
     clearTimeout(timer);
     userList.innerHTML = "";
-    loader.classList.add('loading'); // Mostrar el loader al iniciar el retraso
+    loader.classList.add('loading'); // MOSTRAR LOADER CUANDO HAYA RETRASO
 
     timer = setTimeout(() => {
       func.apply(this, args);
-      loader.classList.remove('loading'); // Ocultar el loader al completar el retraso
+      loader.classList.remove('loading'); // OCULTAR LOADER CUANDO HAYA RETRASO
     }, delay);
   };
 }

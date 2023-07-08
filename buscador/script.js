@@ -5,6 +5,7 @@ const loginUrl = "https://api.github.com/users/"
 const darkModeButton = document.querySelector("#darkModeButton");
 const darkModeButtonLabel = document.querySelector("#darkModeButtonLabel");
 const placeholderText = input.placeholder;
+const loader = document.querySelector('#loader');
 
 let userResults = []
 

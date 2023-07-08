@@ -30,11 +30,6 @@ header h1 {
     background-color: #636363;
 }
 
-.darkModeOption {
-    display: flex;
-    flex-direction: column;
-  }
-
   .switchButton {
     position: relative;
     display: inline-block;
@@ -46,7 +41,6 @@ header h1 {
     overflow: hidden;
   }
 
-  
   .switchSlider {
     position: absolute;
     top: 2px;

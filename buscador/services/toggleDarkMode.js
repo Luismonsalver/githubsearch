@@ -2,8 +2,8 @@
 function toggleDarkMode() {
     document.body.classList.toggle("darkMode");
     if (document.body.classList.contains("darkMode")) {
-      darkModeButtonLabel.textContent = "Modo claro";
+      sliderImage.src = "media/darkmode.png";
     } else {
-      darkModeButtonLabel.textContent = "Modo oscuro";
+      sliderImage.src = "media/lightmode.png";
     }
   }

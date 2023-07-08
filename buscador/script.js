@@ -6,6 +6,7 @@ const darkModeButton = document.querySelector("#darkModeButton");
 const darkModeButtonLabel = document.querySelector("#darkModeButtonLabel");
 const placeholderText = input.placeholder;
 const loader = document.querySelector('#loader');
+const sliderImage = document.querySelector('#sliderImage');
 
 let userResults = []
 
@@ -33,7 +34,7 @@ if (window.matchMedia('(prefers-color-scheme)').media !== 'not all') {
 
   if (systemColorPreference === 'dark') {
     document.body.classList.add('darkMode');
-    darkModeButtonLabel.textContent = "Modo claro";
+    sliderImage.src = "media/darkmode.png";
   } else {
     document.body.classList.remove('darkMode');
   }

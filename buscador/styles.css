@@ -56,7 +56,7 @@ input[type="text"] {
 }
 
 input[type="text"]::placeholder {
-    color: rgba(97, 97, 97, 0.888);
+    color: #616161e2;
     font: bold 1.1rem "Century Gothic";
     text-indent: 20px;
 }
@@ -149,7 +149,7 @@ body.darkMode {
 }
 
 .darkMode #search {
-    border: 3px solid #141424;
+    border: 3px solid #ffffff;
 }
 
 .darkMode input[type="text"]:focus {

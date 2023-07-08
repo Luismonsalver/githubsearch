@@ -27,7 +27,7 @@ input.addEventListener("blur", function() {
 //LA PETICION SE RETRASA 2 SEGUNDOS
 input.addEventListener("input", debounce(handleChange, 2000));
 
-//SE UTILIZA MATCHMEDIA PARA VERIFICAR LA PREFERENCIA DE MODO DEL ORDENADOR
+//SE UTILIZA MATCHMEDIA PARA VERIFICAR LA PREFERENCIA DE MODO DEL ORDENADOR (MODO OSCURO O MODO CLARO)
 if (window.matchMedia('(prefers-color-scheme)').media !== 'not all') {
 
   const systemColorPreference = window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light';
